@@ -1,11 +1,10 @@
-def classifyTriangle(a, b, c):
-    '''
-    Classify Triangle
-    Classifies Triangles based on the given side lengths a, b, c
+"""Classifies Triangles based on the given side lengths side_a, side_b, side_c"""
+def classify_triangle(side_a, side_b, side_c):
+    """
     Parameters:
-    a (int): triangle side a
-    b (int): triangle side b
-    c (int): triangle side c
+    side_a (int): triangle side a
+    side_b (int): triangle side b
+    side_c (int): triangle side c
 
     requires that the input values be >= 0 and <= 200
     verifies that all 3 inputs are integers
@@ -14,21 +13,22 @@ def classifyTriangle(a, b, c):
 
     Returns:
     string: Type of Triangle or 'Not a Triangle' or 'Invalid Input'
-    '''
-    
-    instance_list = [isinstance(a, int), isinstance(b, int), isinstance(c, int)]
-    if (max(a, b, c) > 200 or min(a, b, c) < 0 or not instance_list):
+    """
+
+    instance_list = [isinstance(side_a, int), isinstance(side_b, int), isinstance(side_c, int)]
+    if (max(side_a, side_b, side_c) > 200 or min(side_a, side_b, side_c) < 0 or not instance_list):
         return 'Invalid Input'
 
-    if ((a >= (b + c)) or (b >= (a + c)) or (c >= (a + b))):
+    if ((side_a >= (side_b + side_c)) or (side_b >= (side_a + side_c))
+            or (side_c >= (side_a + side_b))):
         return 'Not A Triangle'
 
-    if a == b and b == c:
+    if side_a == side_b and side_b == side_c:
         return 'Equilateral'
-    elif ((((a ** 2) + (b ** 2)) == (c ** 2)) or
-          (((a ** 2) + (c ** 2)) == (b ** 2)) or
-          (((c ** 2) + (b ** 2)) == (a ** 2))):
+    if ((((side_a ** 2) + (side_b ** 2)) == (side_c ** 2)) or
+            (((side_a ** 2) + (side_c ** 2)) == (side_b ** 2)) or
+            (((side_c ** 2) + (side_b ** 2)) == (side_a ** 2))):
         return 'Right'
-    elif (a != b) and  (b != c) and (a != c):
+    if (side_a != side_b) and  (side_b != side_c) and (side_a != side_c):
         return 'Scalene'
-    return 'Isoceles'
+    return 'Isosceles'
