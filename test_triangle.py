@@ -3,7 +3,7 @@ import unittest
 
 from triangle import classify_triangle
 
-class TestTriangles(unittest.TestCase):
+class TestTriangle(unittest.TestCase):
     """Run all tests"""
     def test_invalid_triangles(self):
         """Run test on invalid triangle with give parameters"""
@@ -38,13 +38,13 @@ class TestTriangles(unittest.TestCase):
 
     def test_isosceles_triangles(self):
         """Run test on isosceles triangle with give parameters"""
-        self.assertEqual(classify_triangle(5, 5, 1), 'isosceles', '5,5,1 should be isosceles')
+        self.assertEqual(classify_triangle(5, 5, 1), 'Isosceles', '5,5,1 should be isosceles')
     def test_isosceles_triangles2(self):
         """Run test on isosceles triangle with give parameters"""
-        self.assertEqual(classify_triangle(5, 1, 5), 'isosceles', '5,1,5 should be isosceles')
+        self.assertEqual(classify_triangle(5, 1, 5), 'Isosceles', '5,1,5 should be isosceles')
     def test_isosceles_triangles3(self):
         """Run test on isosceles triangle with give parameters"""
-        self.assertEqual(classify_triangle(1, 5, 5), 'isosceles', '1,5,5 should be isosceles')
+        self.assertEqual(classify_triangle(1, 5, 5), 'Isosceles', '1,5,5 should be isosceles')
 
     def test_scalene_triangles(self):
         """Run test on scalene triangle with give parameters"""
